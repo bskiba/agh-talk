@@ -23,10 +23,8 @@ var (
 )
 
 func main() {
-	log.Println(fmt.Printf("Starting to listen on port %d", *port))
-
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello from Kubernetes Basics Workshop!\nWelcome to the <insert name here> shop!\n")
+		fmt.Fprintf(w, "Kto nie skacze ten z UJ!\n")
 	})
 
 	http.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
@@ -46,7 +44,7 @@ func cleanShutdown(s http.Server) {
         signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM)
         <-signalChan
 
-        log.Println("Shutdown signal received, exiting...")
+        fmt.Println("Shutdown signal received, exiting...")
 
         s.Shutdown(context.Background())
 }

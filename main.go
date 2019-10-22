@@ -31,6 +31,11 @@ func main() {
 		fmt.Fprintf(w, version)
 	})
 
+	http.HandleFunc("/whoami", func(w http.ResponseWriter, r *http.Request) {
+		hostName, _ := os.Hostname()
+		fmt.Fprintf(w, "I am %s\n", hostName)
+	})
+
 	s := http.Server{Addr: fmt.Sprintf(":%d", *port)}
 	go func() {
 		log.Fatal(s.ListenAndServe())

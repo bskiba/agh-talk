@@ -1,0 +1,7 @@
+apiVersion: agh.edu.pl/v1alpha1
+kind: Shout
+metadata:
+  name: shout-invalid
+spec:
+  text: "Hej! "
+  count: 12

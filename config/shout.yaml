@@ -1,0 +1,7 @@
+apiVersion: agh.edu.pl/v1alpha1
+kind: Shout
+metadata:
+  name: example-shout
+spec:
+  text: "Hej! "
+  count: 3
